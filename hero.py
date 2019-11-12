@@ -28,5 +28,8 @@ class Hero:
         self.bag.append(item)
 
     def fight_guardian(self):
-        if self.bag.is_full():
-            # faire 
+        if self.position == self.labyrinth.end:
+            if self.bag == 3:
+                return 1
+            else:
+                return 0
