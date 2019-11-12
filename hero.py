@@ -19,5 +19,14 @@ class Hero:
             self.position = new_position
         # SI self.position est dans la liste d'items de labyrinthe:
         if self.labyrinth.has_item_on_position(self.position):
-            # ramasser l'objet
-            self.labyrinth.has_item_on_position.append(self.labyrinth.inventory[0]) # Je ne sais pas si je dois mettre les objets de ma liste ou laisser vide.
+           
+    # ramasser l'objet
+    def catch_item(self):
+        # item - Demander à self.labyrinthe de me renvoyer l'objet situé à self.position
+        item = self.labyrinth.get_item_located_at(self.position)
+        # AJouter objet dans la liste self.bag (self.bag.append(item))
+        self.bag.append(item)
+
+    def fight_guardian(self):
+        if self.bag.is_full():
+            # faire 
