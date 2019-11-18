@@ -14,8 +14,8 @@ class Items:
             random.sample(self.labyrinth.paths, k=len(self.labyrinth.paths))
         )
 
-    def add_item_randomly(self, item):
-        item.position = next(self.labyrinth.random)
-        self.items[item.position] = item
-
+   def add_item_randomly(self, item):
+        self.item = random.sample(
+            set(self.labyrinth.paths)-{self.labyrinth.start, self.labyrinth.end}, 3)
+        return self.item
    
