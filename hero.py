@@ -17,7 +17,7 @@ class Hero:
     
     def fight_guardian(self):
         if self.position == self.labyrinth.end:
-            if self.bag == 3:
+            if self.inventory == 3:
                     print("You win !")
             else:
                     print("Nice try, but take all loot please")
