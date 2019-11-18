@@ -1,21 +1,21 @@
-from position import Position
-from random import choose
-from labyrinthh import Labyrinth
+from random import sample
 
 class Items:
-
     
-
-    def init(self, labyrinth):
-        # Init instance labyrinthe
-
+    def __init__(self, labyrinth,name):
         self.labyrinth = labyrinth
-        self.labyrinth.items = self.random()
-
-    def random(self):
-        # Check random position items
-
+        self.items = {}
+        self.random = None
+        self.position = None
+        self.name = name
         
+    def initialize_random_positions(self):
+        self.random = iter(
+            random.sample(self.labyrinth.paths, k=len(self.labyrinth.paths))
+        )
 
-    def add_random_position(self):
-        pass
+    def add_item_randomly(self, item):
+        item.position = next(self.labyrinth.random)
+        self.items[item.position] = item
+
+   
