@@ -1,3 +1,6 @@
+from position import Position
+from items import Items
+
 class Labyrinth:
     def __init__(self):
         self.paths = []
