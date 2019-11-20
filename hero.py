@@ -11,17 +11,17 @@ class Hero:
         if new_position in self.labyrinth.paths:
             # Déplacer le héro
             self.position = new_position
-            
-            self.get_item(self, new_position)
+            self.get_item()
+            return self.fight_guardian()
 
-    def get_item(self, position):
-        item = self.labyrinth.items.catch_item(position)
+    def get_item(self):
+        item = self.labyrinth.items.catch_item(self.position)
         if item is not None:
             self.inventory.append(self.position)
     
     def fight_guardian(self):
         if self.position == self.labyrinth.end:
-            if self.inventory == 3:
-                    print("You win !")
+            if len(self.inventory) == 3:
+                    return "win"
             else:
-                    print("Nice try, but take all loot please")
+                    return "loss"
