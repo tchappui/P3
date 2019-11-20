@@ -28,6 +28,6 @@ class Items:
     def catch_item(self, position):
         if position in self.items:
             item = self.items[position]
-            del elf.items[position]
+            del self.items[position]
             return item
   
