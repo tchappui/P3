@@ -1,14 +1,5 @@
 from random import sample #import random.sample for init & add item in labyrinth
 
-class Item:
-    
-    def __init__(self, name, position):
-        self.name = name
-        self.position
-        
-Item("needle", Position(10, 5))
-("needle", Position(10, 5))
-
 class Items:
     
     def __init__(self, labyrinth):
